@@ -19,7 +19,7 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
       MiniModelBuilder.cs
       MiniModelBuilder_Create.cs
 
-2.) Download Tabular Editor (if you don't have it installed already). Here is a link to download it: https://github.com/otykier/TabularEditor/releases/.
+2.) Download Tabular Editor (if you don't have it installed already). Here is a link to download it: https://github.com/otykier/TabularEditor/releases/
 
 3.) Open Tabular Editor.
 
