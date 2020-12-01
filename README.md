@@ -8,7 +8,8 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 ## Files
 
-* MiniModelBuilder.cs: This is the Mini Model Builder program which is run inside of Tabular Editor. This is where you customize your mini model to your desired specifications.
+* MiniModelBuilder.cs: This is the Mini Model Builder program which runs inside of Tabular Editor. This is where you customize your mini model to your desired specifications.
+
 * MiniModelBuilder_Create.cs: This is the script that is executed to create the mini model. It reads the metadata which was saved while using the Mini Model Builder program.
 
 ## Instructions for running the program
