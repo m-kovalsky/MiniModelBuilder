@@ -33,9 +33,29 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 The MiniModelBuilder_Create.cs script is the code that actually creates the mini-model. The other script is essentially creating the recipe for your mini-model. This script reads the recipe and dynamically makes all the changes to create your mini-model. 
 
-## Steps within the program
+## Features
 
-* TBD...
+* Step 1: Select which objects you need in your mini model. Object dependencies are automatically added to your mini model.
+* Step 2: Simply toggle to hide or unhide objects (tables, measures, columns, hierarchies) within your mini model. If an object shows as gray in this step it will be hidden in the mini model. If an object shows in black, it will be visible in the mini model.
+* Step 3: Update the DAX for measures or calculated columns in your mini model.
+* Step 4: Remove non-necessary partitions from multi-partitioned tables in your mini model.
+* Step 5: Remove non-necessary perspectives.
+* Step 6: Perform a find-and-replace within your partition queries. This allows you to easily repoint your tables/partitions to a different schema in your data warehouse.
+* Step 7: Update role members and model permission for your mini model.
+* Step 8: Update the row level security (RLS) for any role and table that has RLS filters within the original model.
+* Step 9: Update tables to point to a different data source (choosing among the data sources within the original model).
+* Step 10: Filter your model based on column values. The column filters should be placed on dimension tables. These filters will be applied to the related fact tables as well (based on existing relationships).
+* Step 11: Set aggregations to minimize row counts in your mini model. Use the light bulb icon to recommend summarizations for each of the columns in your table. Aggregations are only for tables on the 'from-side' of a relationship (in other words, Fact tables).
+* Summary: Shows a full summary of all the differences between the original model and the mini model.
+* Blue icon indicates an object is different in the mini model as compared to the original model.
+* Automatically updates perspectives and annotations to ensure your mini model is created exactly as specified.
+* All relationships and model integrity is passed on from the original model to the mini model.
+
+## Requirements
+
+* To use the 'Filter Column Values' step, you must be live-connected to an Analysis Services model.
+* To use either the 'Filter Column Values' or 'Set Aggregations' steps, your data source must be a SQL-type source and partition queries must start with 'SELECT * FROM ...'.
+* Updating roles (Step 7) is not supported via XMLA R/W endpoints in Power BI Premium. If you are deploying to Power BI Premium, modifying roles must be done within the Power BI Service.
 
 ## Version History
 
