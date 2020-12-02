@@ -33,6 +33,12 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 The MiniModelBuilder_Create.cs script is the code that actually creates the mini-model. The other script is essentially creating the recipe for your mini-model. This script reads the recipe and dynamically makes all the changes to create your mini-model. 
 
+## Instructions for using the program
+
+* For navigation, either use the 'Next' button or click directly on a particular step.
+* Only Step 1 is necessary. All other steps are optional.
+* Always click the 'Save' button after making a change. If the 'Save' button is not pressed, your changes will not be saved.
+
 ## Features
 
 * Step 1: Select which objects you need in your mini model. Object dependencies are automatically added to your mini model.
@@ -50,6 +56,7 @@ The MiniModelBuilder_Create.cs script is the code that actually creates the mini
 * Blue icon indicates an object is different in the mini model as compared to the original model.
 * Automatically updates perspectives and annotations to ensure your mini model is created exactly as specified.
 * All relationships and model integrity is passed on from the original model to the mini model.
+* In the Summary view, the 'Script' button will output a C# file which contains all the instructions for creating your mini model. This can be executed in the 'Advanced Scripting' window against the original model.
 
 ## Requirements
 
