@@ -60,6 +60,7 @@ The MiniModelBuilder_Create.cs script is the code that actually creates the mini
 
 ## Requirements
 
+* Tabular Editor version 2.12.1 or higher.
 * Compatible for SQL Server Analysis Services, Azure Analysis Services, and Power BI Premium models.
 * Compatible for tabular models using Import-mode, Direct Query mode, and Composite models.
 * To use the 'Filter Column Values' step, you must be live-connected to an Analysis Services model.
