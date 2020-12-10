@@ -56,7 +56,7 @@ The MiniModelBuilder_Create.cs script is the code that actually creates the mini
 * Blue icon indicates an object is different in the mini model as compared to the original model.
 * Automatically updates perspectives and annotations to ensure your mini model is created exactly as specified.
 * All relationships and model integrity is passed on from the original model to the mini model.
-* In the Summary view, the 'Script' button will output a C# file which contains all the instructions for creating your mini model. This can be executed in the 'Advanced Scripting' window against the original model.
+* In the Summary view, the 'Script' button will output a C# file to your desktop which contains all the instructions for creating your mini model. This can be executed in the 'Advanced Scripting' window against the original model.
 
 ## Requirements
 
