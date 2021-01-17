@@ -1,6 +1,6 @@
 # Mini Model Builder
 
-Mini Model Builder is a tool that allows you to customize a 'mini model' based on an existing tabular model. This tool runs inside of Tabular Editor's Advanced Scripting feature. This tool is compatible for all destinations of tabular models - SQL Server Analysis Services, Azure Analysis Services, and Power BI Premium. This tool is also viable for both in-memory and direct query models.
+Mini Model Builder is a tool that allows you to customize a 'mini model' based on an existing tabular model. This tool runs inside of [Tabular Editor](https://tabulareditor.com/ "Tabular Editor")'s [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") feature. This tool is compatible for all destinations of tabular models - SQL Server Analysis Services, Azure Analysis Services, and Power BI Premium. This tool is also viable for both in-memory and direct query models.
 
 ## Purpose
 
@@ -19,7 +19,7 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
       MiniModelBuilder.cs
       MiniModelBuilder_Create.cs
 
-2.) Download Tabular Editor (if you don't have it installed already). Here is a link to download it: https://github.com/otykier/TabularEditor/releases/
+2.) Download and install [Tabular Editor](https://github.com/otykier/TabularEditor/releases/latest "Tabular Editor") (if you don't have it installed already).
 
 3.) Open Tabular Editor.
 
