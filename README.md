@@ -63,6 +63,7 @@ The MiniModelBuilder_Create.cs script is the code that actually creates the mini
 * Tabular Editor version 2.12.1 or higher.
 * Compatible for SQL Server Analysis Services, Azure Analysis Services, and Power BI Premium models.
 * Compatible for tabular models using Import-mode, Direct Query mode, and Composite models.
+* Make sure to click the 'Save' button within each page of the Mini Model Builder after making changes.
 * To use the 'Filter Column Values' step, you must be live-connected to an Analysis Services model.
 * To use either the 'Filter Column Values' or 'Set Aggregations' steps, your data source must be a SQL-type source and partition queries must start with 'SELECT * FROM ...'.
 * Updating roles (Step 7) is not supported via XMLA R/W endpoints in Power BI Premium. If you are deploying to Power BI Premium, modifying roles must be done within the Power BI Service.
