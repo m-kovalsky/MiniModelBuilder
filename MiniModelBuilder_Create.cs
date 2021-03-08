@@ -1,4 +1,4 @@
-var version = "test"; // To Do: Replace this with the name of your perspective
+var version = System.Environment.GetEnvironmentVariable("miniModelName");
 
 // Remove tables, measures, columns and hierarchies that are not part of the perspective:
 foreach(var t in Model.Tables.ToList()) {

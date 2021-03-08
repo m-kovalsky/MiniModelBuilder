@@ -40,7 +40,7 @@ System.Net.WebClient w = new System.Net.WebClient();
 System.Windows.Forms.ToolTip saveButtonToolTip = new System.Windows.Forms.ToolTip();
 saveButtonToolTip.SetToolTip(saveButton, "Saves the changes back to the model");
 System.Windows.Forms.ToolTip exportscriptButtonToolTip = new System.Windows.Forms.ToolTip();
-saveButtonToolTip.SetToolTip(exportscriptButton, "Saves a script with the mini model instructions to your desktop");
+exportscriptButtonToolTip.SetToolTip(exportscriptButton, "Saves a script with the mini model instructions to your desktop");
 
 // Step 1
 System.Windows.Forms.TreeView step1treeView = new System.Windows.Forms.TreeView();
@@ -1372,7 +1372,7 @@ System.Action<int> NextStep = stepNumber =>
                 // Add hierarchy sub-nodes
                 foreach (var h in t.Hierarchies.Where(a => a.IsHidden == false).OrderBy(a => a.Name).ToList())
                 {
-                    var hierarchyName = h.Name;
+                    string hierarchyName = h.Name;
                     var x = tn.Nodes.Add(hierarchyName); 
                     x.ImageIndex = 3;
                     x.SelectedImageIndex = 3;   
@@ -1385,7 +1385,7 @@ System.Action<int> NextStep = stepNumber =>
             {     
                 foreach (System.Windows.Forms.TreeNode rootNode in step1treeView.Nodes)
                 {
-                     var tableName = rootNode.Text;             
+                     string tableName = rootNode.Text;             
                  
                      int childNodeCount = rootNode.Nodes.Count;   
                      int childNodeCheckedCount = 0;  
