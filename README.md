@@ -27,8 +27,11 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 After you set up a mini model using the Mini Model Builder tool and deploy your model to a server, you can generate the mini model. 
 
-1. Download the MiniModelBuilder_Create.cs script and save it to your computer.
-2. Run the code in the command prompt below (filling in the \<parameters\>) according to the variety of tabular you are using.
+1.) Download the following file to your computer.
+       
+       MiniModelBuilder_Create.cs
+       
+2.) Run the following code in the command prompt below (filling in the \<parameters\>) according to the variety of tabular you are using.
 
 Since each of the scripts below uses an Environment Variable (set miniModelName=<Mini Model Name>), there is no need to duplicate the MiniModelBuilder_Create.cs file for each mini model. The same MiniModelBuilder_Create.cs file can be referenced for creating all mini models. Setting the 'miniModelName' Environment Variable instructs the code which mini model to create.
 
