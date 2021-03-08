@@ -1,23 +1,16 @@
 # Mini Model Builder
 
-Mini Model Builder is a tool that allows you to customize a 'mini model' based on an existing tabular model. This tool runs inside of [Tabular Editor](https://tabulareditor.com/ "Tabular Editor")'s [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") feature. This tool is compatible for all destinations of tabular models - SQL Server Analysis Services, Azure Analysis Services, and Power BI Premium. This tool is also viable for both in-memory and direct query models.
+Mini Model Builder is a tool that allows you to customize a 'mini model' based on an existing tabular model. This tool runs inside of [Tabular Editor](https://tabulareditor.com/ "Tabular Editor")'s [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") feature. This tool is compatible for all destinations of tabular models - [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services"), [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/ "Azure Analysis Services"), and [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium"). This tool is also viable for both in-memory and direct query models.
 
 ## Purpose
 
 Call them what you want - 'micro cubes', 'mini models', 'derivative models' - this tool is designed to simplify the process of creating a 'mini model'. It is also designed with the intention of being used by a broader audience than just the tabular developer community.
 
-## Files
+## Running the Tool
 
-* MiniModelBuilder.cs: This is the Mini Model Builder program which runs inside of Tabular Editor. This is where you customize your mini model to your desired specifications.
-
-* MiniModelBuilder_Create.cs: This is the script that actually creates the mini model. It reads the metadata which was saved while using the Mini Model Builder program.
-
-## Instructions for running the program
-
-1.) Download the following files to your computer.
+1.) Download the following file to your computer.
 
       MiniModelBuilder.cs
-      MiniModelBuilder_Create.cs
 
 2.) Download and install [Tabular Editor](https://github.com/otykier/TabularEditor/releases/latest "Tabular Editor") (if you don't have it installed already).
 
@@ -25,13 +18,35 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 4.) Connect to your model.
 
-5.) Paste the MiniModelBuilder.cs script inside the 'Advanced Scripting' window.
+5.) Paste the MiniModelBuilder.cs script inside the [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window.
 
 6.) Click the play button (or press F5).
 
-## The 'Create' script
+## Generating the 'Mini Model'
 
-The MiniModelBuilder_Create.cs script is the code that actually creates the mini-model. The other script is essentially creating the recipe for your mini-model. This script reads the recipe and dynamically makes all the changes to create your mini-model. 
+After you set up a mini model using the Mini Model Builder tool and deploy your model to a server, you can generate the mini model. 
+
+1. Download the MiniModelBuilder_Create.cs script and save it to your computer.
+2. Run the code in the command prompt below (filling in the \<parameters\>) according to the variety of tabular you are using.
+
+Since each of the scripts below uses an Environment Variable (set miniModelName=<Mini Model Name>), there is no need to duplicate the MiniModelBuilder_Create.cs file for each mini model. The same MiniModelBuilder_Create.cs file can be referenced for creating all mini models. Setting the 'miniModelName' Environment Variable instructs the code which mini model to create.
+
+## [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services")
+
+    set miniModelName=<Mini Model Name>
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<Server Name>" "<Database Name>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>"
+
+## [Azure Analyis Services](https://azure.microsoft.com/services/analysis-services/ "Azure Analysis Services")
+
+    set miniModelName=<Mini Model Name>
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "Provider=MSOLAP;Data Source=asazure://<AAS Region>.asazure.windows.net/<AAS Server Name>;User ID=<xxxxx>;Password=<xxxxx>;Persist Security Info=True;Impersonation Level=Impersonate" "<Database Name>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>"
+
+## [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium")
+
+Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools "XMLA R/W Endpoints") for your Premium Workspace. An additional requirement is setting up a [Service Principal](https://tabulareditor.com/2020/06/02/PBI-SP-Access.html "Setting up a Service Principal").
+
+    set miniModelName=<Mini Model Name>
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Premium Dataset>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>" 
 
 ## Instructions for using the program
 
@@ -60,14 +75,15 @@ The MiniModelBuilder_Create.cs script is the code that actually creates the mini
 
 ## Requirements
 
-* Tabular Editor version 2.12.1 or higher.
+* [Tabular Editor](https://tabulareditor.com/ "Tabular Editor") version 2.12.1 or higher.
 * Compatible for SQL Server Analysis Services, Azure Analysis Services, and Power BI Premium models.
 * Compatible for tabular models using Import-mode, Direct Query mode, and Composite models.
 * Make sure to click the 'Save' button within each page of the Mini Model Builder after making changes.
 * To use the 'Filter Column Values' step, you must be live-connected to an Analysis Services model.
 * To use either the 'Filter Column Values' or 'Set Aggregations' steps, your data source must be a SQL-type source and partition queries must start with 'SELECT * FROM ...'.
-* Updating roles (Step 7) is not supported via XMLA R/W endpoints in Power BI Premium. If you are deploying to Power BI Premium, modifying roles must be done within the Power BI Service.
 
 ## Version History
 
 * 2020-12-01 Version 1.0.0 released on GitHub.com
+* 2021-03-08 Version 1.0.1 released on GitHub.com
+  * MiniModelBuilder_Create.cs now uses an Environment Variable so the script is completely reusable for all mini models.
