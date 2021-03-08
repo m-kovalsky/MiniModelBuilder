@@ -1,6 +1,7 @@
 # Mini Model Builder
 
-Mini Model Builder is a tool that allows you to customize a 'mini model' based on an existing tabular model. This tool runs inside of [Tabular Editor](https://tabulareditor.com/ "Tabular Editor")'s [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") feature. This tool is compatible for all destinations of tabular models - [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services"), [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/ "Azure Analysis Services"), and [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium"). This tool is also viable for both in-memory and direct query models.
+Mini Model Builder is a tool that allows you to customize a 'mini model' based on an existing tabular model. This tool runs inside of [Tabular Editor](https://tabulareditor.com/ "Tabular Editor")'s [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") feature. This tool is compatible for all destinations of tabular models - [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services"), [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/ "Azure Analysis Services"), and [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium") (using the [XMLA 
+endpoint](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools "XMLA R/W Endpoint")). This tool is also viable for both in-memory and direct query models.
 
 ## Purpose
 
@@ -22,7 +23,7 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 6.) Click the play button (or press F5).
 
-## Generating the 'Mini Model'
+## Creating the 'Mini Model'
 
 After you set up a mini model using the Mini Model Builder tool and deploy your model to a server, you can generate the mini model. 
 
