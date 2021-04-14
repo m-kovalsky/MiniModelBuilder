@@ -13,15 +13,13 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
       MiniModelBuilder.cs
 
-2.) Download and install [Tabular Editor](https://github.com/otykier/TabularEditor/releases/latest "Tabular Editor") (if you don't have it installed already).
+2.) Open [Tabular Editor](https://github.com/otykier/TabularEditor/releases/latest "Tabular Editor").
 
-3.) Open Tabular Editor.
+3.) Connect to your model.
 
-4.) Connect to your model.
+4.) Paste the MiniModelBuilder.cs script inside the [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window.
 
-5.) Paste the MiniModelBuilder.cs script inside the [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window.
-
-6.) Click the play button (or press F5).
+5.) Click the 'Play' button (or press F5).
 
 ## Creating the 'Mini Model'
 
