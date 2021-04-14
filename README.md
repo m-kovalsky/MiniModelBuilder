@@ -17,7 +17,7 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 3.) Connect to your model.
 
-4.) Paste the MiniModelBuilder.cs script inside the [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window.
+4.) Paste the MiniModelBuilder.cs script inside the [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window within Tabular Editor.
 
 5.) Click the 'Play' button (or press F5).
 
@@ -52,7 +52,7 @@ Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://
 
 ## Instructions for using the program
 
-* For navigation, either use the 'Next' button or click directly on a particular step.
+* For navigation, either use the 'Next' button or click directly on a particular step using the Navigation pane.
 * Only Step 1 is necessary. All other steps are optional.
 * Always click the 'Save' button after making a change. If the 'Save' button is not pressed, your changes will not be saved.
 
