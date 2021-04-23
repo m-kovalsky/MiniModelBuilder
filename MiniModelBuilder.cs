@@ -626,7 +626,7 @@ eraseButton.MouseLeave += (System.Object sender, System.EventArgs e) => {
 };
 
 // Step Button Event Handlers
-topButton.Click += (System.Object sender, System.EventArgs e) => {​
+topButton.Click += (System.Object sender, System.EventArgs e) => {
 
     System.Diagnostics.Process.Start("http://www.elegantbi.com");
 };
@@ -2490,7 +2490,7 @@ System.Action<int> NextStep = stepNumber =>
 };
 
 // Event Handlers (Start Screen)
-newmodelButton.Click += (System.Object sender, System.EventArgs e) => {​
+newmodelButton.Click += (System.Object sender, System.EventArgs e) => {
 
     startstep1Button.Visible = true;
     startstep1Button.Location = new Point(startScreenX+25, startScreenY+80);
@@ -2500,12 +2500,12 @@ newmodelButton.Click += (System.Object sender, System.EventArgs e) => {​
     modelnameTextBox.Enabled = true;
 };
 
-mmComboBox.SelectedValueChanged += (System.Object sender, System.EventArgs e) => {​
+mmComboBox.SelectedValueChanged += (System.Object sender, System.EventArgs e) => {
 
     startstep1Button.Enabled = true;         
 };
 
-existingmodelButton.Click += (System.Object sender, System.EventArgs e) => {​
+existingmodelButton.Click += (System.Object sender, System.EventArgs e) => {
 
     startstep1Button.Location = new Point(startScreenX+25, startScreenY+120);
     mmComboBox.Visible = true;
@@ -2527,12 +2527,12 @@ existingmodelButton.Click += (System.Object sender, System.EventArgs e) => {​
     }  
 };
 
-startstep1Button.Click += (System.Object sender, System.EventArgs e) => {​
+startstep1Button.Click += (System.Object sender, System.EventArgs e) => {
 
     NextStep(1);    
 };
 
-nextstepButton.Click += (System.Object sender, System.EventArgs e) => {​
+nextstepButton.Click += (System.Object sender, System.EventArgs e) => {
 
     if (step1treeView.Visible == true)
     {
@@ -2665,17 +2665,17 @@ step12Button.Click += (System.Object sender, System.EventArgs e) => {
     NextStep(12);
 };
 
-step1treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step1treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step1treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step1treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step1treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {​ 
+step1treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {
     
     if (IsExpOrCol == false)
     {
@@ -2741,17 +2741,17 @@ step1treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.Tree
     IsExpOrCol = false;
 };
 
-step2treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step2treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step2treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step2treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step2treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {​ 
+step2treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {
     
     if (IsExpOrCol == false)
     {    
@@ -2845,7 +2845,7 @@ step2treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.Tree
     IsExpOrCol = false;
 };
 
-step3treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step3treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     oldDAXTextBox.Text = string.Empty;
     newDAXTextBox.Text = string.Empty;
@@ -2884,17 +2884,17 @@ step3treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeVie
     }    
 };
 
-step4treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step4treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step4treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step4treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step4treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {​ 
+step4treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {
     
     if (IsExpOrCol == false)
     {
@@ -2948,7 +2948,7 @@ step4treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.Tree
     IsExpOrCol = false;  
 };
 
-step5treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {​ 
+step5treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {
 
     if (e.Node.StateImageIndex != 1)
     {
@@ -2960,7 +2960,7 @@ step5treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.Tree
     }
 };
 
-step6treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {​ 
+step6treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {
 
     //newqueryTextBox.ReadOnly = false;
     findTextBox.ReadOnly = false;
@@ -3005,7 +3005,7 @@ step6treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.Tree
     replaceTextBox.Text = operReplace;
 };
 
-step7treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step7treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     string ann = perspName+"_UpdateRoleMembers";
     string ann2 = perspName+"_UpdateModelPermission";
@@ -3040,7 +3040,7 @@ step7treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeVie
     }
 };
 
-step8treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step8treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
 
     if (e.Node.Parent != null)
     {
@@ -3064,7 +3064,7 @@ step8treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeVie
     }
 };
 
-step9treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step9treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
    
     string ann = perspName+"_UpdateDataSource";
     string tableName = e.Node.Text;    
@@ -3083,17 +3083,17 @@ step9treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeVie
     newdsComboBox.Enabled = true;
 };
 
-step10treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step10treeView.AfterExpand += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step10treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step10treeView.AfterCollapse += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
     
     IsExpOrCol = true;
 };
 
-step10treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {​ 
+step10treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.TreeNodeMouseClickEventArgs e) => {
     
     if (IsExpOrCol == false)
     {
@@ -3145,7 +3145,7 @@ step10treeView.NodeMouseClick += (System.Object sender, System.Windows.Forms.Tre
     IsExpOrCol = false;
 };
 
-step11treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {​ 
+step11treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeViewEventArgs e) => {
 
     // Remove existing controls
     rightPanel2.Controls.Clear();
@@ -3229,7 +3229,7 @@ step11treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeVi
     }
 };
 
-saveButton.Click += (System.Object sender, System.EventArgs e) => {​
+saveButton.Click += (System.Object sender, System.EventArgs e) => {
 
     perspName = modelnameTextBox.Text;
     // Step 1
@@ -3886,14 +3886,14 @@ saveButton.Click += (System.Object sender, System.EventArgs e) => {​
     }
 };
 
-exportscriptButton.Click += (System.Object sender, System.EventArgs e) => {​      
+exportscriptButton.Click += (System.Object sender, System.EventArgs e) => {
 
     // Save export script to desktop
     string desktopPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
     System.IO.File.WriteAllText(desktopPath + @"\"+perspName+"_MiniModel.cs", sb_ExportScript.ToString());
 };
 
-recoButton.Click += (System.Object sender, System.EventArgs e) => {​
+recoButton.Click += (System.Object sender, System.EventArgs e) => {
 
     if (step11treeView.SelectedNode != null)
     {
@@ -3937,7 +3937,7 @@ recoButton.Click += (System.Object sender, System.EventArgs e) => {​
     }
 };
 
-eraseButton.Click += (System.Object sender, System.EventArgs e) => {​
+eraseButton.Click += (System.Object sender, System.EventArgs e) => {
 
     if (step11treeView.SelectedNode != null)
     {
