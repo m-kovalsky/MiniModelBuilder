@@ -8,6 +8,7 @@ System.Windows.Forms.RadioButton newmodelButton = new System.Windows.Forms.Radio
 System.Windows.Forms.RadioButton existingmodelButton = new System.Windows.Forms.RadioButton();
 System.Windows.Forms.ComboBox mmComboBox = new System.Windows.Forms.ComboBox();            
 System.Windows.Forms.Button startstep1Button = new System.Windows.Forms.Button();
+System.Windows.Forms.Label toolNameLabel = new System.Windows.Forms.Label();
 
 // Main screen
 System.Windows.Forms.Label modelnameLabel = new System.Windows.Forms.Label();
@@ -129,6 +130,8 @@ System.Drawing.Color treeViewBkgrdColor = Color.White;
 // Fonts
 System.Drawing.Font sidePanelFont = new Font("Century Gothic", 10);
 System.Drawing.Font topLeftPanelFont = new Font("Century Gothic", 14);
+System.Drawing.Font toolNameFont = new Font("Century Gothic", 22);
+System.Drawing.Font elegantFont = new Font("Century Gothic", 10, FontStyle.Italic);
 
 // DAX Formatter Function (showing error)
 // var myFormatDax = new Func<string, string>(orgDax => {
@@ -202,6 +205,7 @@ string asErrorMessage = "'Step 10: Filter Column Values' is only possible for mo
 
 // Form
 newForm.TopMost = true;
+newForm.Text = "Mini Model Builder";
 newForm.Size = new Size(formWidth,formHeight);
 newForm.MaximumSize = new Size(formWidth,formHeight);
 newForm.MinimumSize = new Size(formWidth,formHeight);
@@ -213,6 +217,7 @@ newForm.Controls.Add(topRightPanel);
 newForm.Controls.Add(rightPanel);
 newForm.Controls.Add(rightPanel2);
 newForm.Controls.Add(newmodelButton);
+newForm.Controls.Add(toolNameLabel);
 newForm.Controls.Add(existingmodelButton);
 newForm.Controls.Add(mmComboBox);
 newForm.Controls.Add(startstep1Button);
@@ -791,7 +796,7 @@ step12Button.MouseLeave += (System.Object sender, System.EventArgs e) => {
 int labelWidth = 55;
 int labelHeight = 15;
 int labelGap = 5;
-int modelButtonWidth = 180;
+int modelButtonWidth = 250;
 int buttonWidth = 100;   
 int buttonHeight = 40;    
 int startScreenX = (formWidth / 2) - (modelButtonWidth / 2);
@@ -931,20 +936,28 @@ infoLabel.Visible = false;
 newmodelButton.Size = new Size(modelButtonWidth,buttonHeight);
 newmodelButton.Location = new Point(startScreenX,startScreenY);
 newmodelButton.Text = "Create New Mini Model";
+newmodelButton.Font = sidePanelFont;
 
 // Existing Model Button
 existingmodelButton.Size = new Size(modelButtonWidth,buttonHeight);
 existingmodelButton.Location = new Point(startScreenX,startScreenY+30);
 existingmodelButton.Text = "Modify Existing Mini Model";
+existingmodelButton.Font = sidePanelFont;
+
+// toolNameLabel
+toolNameLabel.Size = new Size(400,60);
+toolNameLabel.Location = new Point(345,130);
+toolNameLabel.Text = "Mini Model Builder";
+toolNameLabel.Font = toolNameFont;
 
 // MM Combo Box
 mmComboBox.Visible = false;
-mmComboBox.Size = new Size(buttonWidth+25,buttonHeight);
-mmComboBox.Location = new Point(startScreenX+11,startScreenY+80);
+mmComboBox.Size = new Size(buttonWidth+70,buttonHeight+10);
+mmComboBox.Location = new Point(startScreenX+14,startScreenY+80);
+mmComboBox.Font = sidePanelFont;
 
 // Start Step 1 Button (Go)
-startstep1Button.Size = new Size(100,25);
-startstep1Button.Location = new Point(startScreenX+21,startScreenY+80);
+startstep1Button.Size = new Size(120,30);
 startstep1Button.Text = "Go";
 startstep1Button.Visible = false;
 startstep1Button.Enabled = false; 
@@ -954,6 +967,7 @@ int startstepButtonY = topLeftPanelHeight-50;
 int startstepButtonWidth = 80;
 int startstepButtonHeight = 25;
 int topRightLabelY = 43;
+
 // Next Step Button
 nextstepButton.Size = new Size(startstepButtonWidth,startstepButtonHeight);
 nextstepButton.Location = new Point(startstepButtonX,startstepButtonY);
@@ -2493,7 +2507,7 @@ System.Action<int> NextStep = stepNumber =>
 newmodelButton.Click += (System.Object sender, System.EventArgs e) => {
 
     startstep1Button.Visible = true;
-    startstep1Button.Location = new Point(startScreenX+25, startScreenY+80);
+    startstep1Button.Location = new Point(startScreenX+37, startScreenY+80);
     mmComboBox.Visible = false;
     startstep1Button.Enabled = true;
     mmComboBox.Text = string.Empty;
@@ -2507,7 +2521,7 @@ mmComboBox.SelectedValueChanged += (System.Object sender, System.EventArgs e) =>
 
 existingmodelButton.Click += (System.Object sender, System.EventArgs e) => {
 
-    startstep1Button.Location = new Point(startScreenX+25, startScreenY+120);
+    startstep1Button.Location = new Point(startScreenX+37, startScreenY+120);
     mmComboBox.Visible = true;
     startstep1Button.Visible = true;    
     startstep1Button.Enabled = false;
