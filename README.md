@@ -88,6 +88,8 @@ Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://
 
 ## Version History
 
+* 2021-04-23 Version 1.0.2 released
+* 2021-03-08 Version 1.0.1 released
+   * MiniModelBuilder_Create.cs now uses an Environment Variable so the script is completely reusable for all mini models.
 * 2020-12-01 Version 1.0.0 released on GitHub.com
-* 2021-03-08 Version 1.0.1 released on GitHub.com
-  * MiniModelBuilder_Create.cs now uses an Environment Variable so the script is completely reusable for all mini models.
+
