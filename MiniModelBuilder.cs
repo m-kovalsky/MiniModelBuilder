@@ -204,7 +204,7 @@ int rightPanelWidth = formWidth - midPanelWidth - stepButtonWidth - (3*gap)-6;
 string asErrorMessage = "'Step 10: Filter Column Values' is only possible for models connected to Analysis Services";
 
 // Form
-newForm.TopMost = true;
+newForm.TopLevel = true;
 newForm.Text = "Mini Model Builder";
 newForm.Size = new Size(formWidth,formHeight);
 newForm.MaximumSize = new Size(formWidth,formHeight);
@@ -961,6 +961,7 @@ startstep1Button.Size = new Size(120,30);
 startstep1Button.Text = "Go";
 startstep1Button.Visible = false;
 startstep1Button.Enabled = false; 
+startstep1Button.Font = sidePanelFont;
 
 int startstepButtonX = 145;
 int startstepButtonY = topLeftPanelHeight-50;
@@ -2098,8 +2099,8 @@ System.Action<int> NextStep = stepNumber =>
                             z.ForeColor = hiddenColor;
                         }
 
-                        sb_ExportScript.Append(Environment.NewLine);  
-                        sb_ExportScript.Append("Model.Tables[\""+tableName+"\"].InPerspective[perspName] = true;");
+                        //sb_ExportScript.Append(Environment.NewLine);  
+                        //sb_ExportScript.Append("Model.Tables[\""+tableName+"\"].InPerspective[perspName] = true;");
 
                         foreach (var o in t.Columns.Where(a => a.InPerspective[perspName]).OrderBy(a => a.Name).ToList())
                         {
