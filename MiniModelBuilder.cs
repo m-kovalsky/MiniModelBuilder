@@ -3367,10 +3367,36 @@ saveButton.Click += (System.Object sender, System.EventArgs e) => {
             //             {
             //                 // do nothing
             //             }
-            //         }                
+            //         }
             //     }
             // }
             
+            // Add column dependencies
+            foreach (var c in Model.AllColumns.Where(a => a.InPerspective[perspName]).ToList())
+            {
+                // Add sort-by column dependencies
+                try
+                {
+                    c.SortByColumn.InPerspective[perspName] = true;
+                }
+                catch
+                {
+                }
+
+                // // Add calculated column dependencies
+                // if (c.Type.ToString() == "Calculated")
+                // {
+                //     var allReferences = (Model.Tables[c.Table.Name].Columns[c.Name] as CalculatedColumn).DependsOn.Deep();
+
+                //     foreach(var dep in allReferences)
+                //     {
+                //         // Add dependent columns/measures specified in text file to the perspective
+                //         var columnDep = dep as Column; if(columnDep != null) columnDep.InPerspective[perspName] = true;
+                //         var measureDep = dep as Measure; if(measureDep != null) measureDep.InPerspective[perspName] = true;
+                //     }
+                // }
+            }
+
             // Add RLS tables and related column to the perspective
             foreach (var r in Model.Roles.ToList())
             {
@@ -3409,7 +3435,7 @@ saveButton.Click += (System.Object sender, System.EventArgs e) => {
                 }    
             }
 
-            //Add in foreign and primary keys from tables that are within the perspective.
+            // Add in foreign and primary keys from tables that are within the perspective.
             foreach (var rel in Model.Relationships.Where(r => r.FromTable.InPerspective[perspName] && r.ToTable.InPerspective[perspName]).ToList())
             { 
                 string tF = rel.FromTable.Name;
@@ -3418,7 +3444,7 @@ saveButton.Click += (System.Object sender, System.EventArgs e) => {
                 string tT = rel.ToTable.Name;
                 string cT = rel.ToColumn.Name;
                 Model.Tables[tT].Columns[cT].InPerspective[perspName] = true;
-            } 
+            }
         }    
     }
 
