@@ -3177,7 +3177,7 @@ step11treeView.AfterSelect += (System.Object sender, System.Windows.Forms.TreeVi
     foreach (var p in Model.Tables[tableName].Partitions)
     {
         string partitionName = p.Name;
-        string pQuery = p.Query.Replace(" ","").Replace("\r\n","").Replace("\r","").Replace("\n","");
+        string pQuery = p.Query.Replace(" ","").Replace("\r\n","").Replace("\r","").Replace("\n","").Replace("\t","");
 
         if (pQuery.ToUpper().Substring(0,11) != "SELECT*FROM")
         {

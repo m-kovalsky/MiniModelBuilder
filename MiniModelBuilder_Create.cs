@@ -88,11 +88,6 @@ foreach(var x in Model.AllHierarchies)
 // *************  START REMOVALS ************** //
 
 ann = version+"_Remove";
-// Remove Perspectives based on annotations
-foreach(var x in Model.Perspectives.Where(a => a.HasAnnotation(ann)).ToList())
-{
-    x.Delete();
-}
 
 // Remove Data Sources based on annotations
 foreach(var x in Model.DataSources.Where(a => a.HasAnnotation(ann)).ToList())
@@ -515,4 +510,13 @@ foreach (var t in Model.Tables.Where(a => a.Columns.Where(b => b.HasAnnotation(a
             }               
         }
     }
+}
+
+// Remove perspectives
+
+ann = version+"_Remove";
+// Remove Perspectives based on annotations
+foreach(var x in Model.Perspectives.Where(a => a.HasAnnotation(ann)).ToList())
+{
+    x.Delete();
 }
