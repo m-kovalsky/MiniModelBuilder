@@ -25,9 +25,9 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 ## Creating the 'Mini Model'
 
-After you set up a mini model using the Mini Model Builder tool and deploy your model to a server, you can generate the mini model. 
+After you set up a mini model using the Mini Model Builder tool and save your model to a .bim file, you can use the command line code below to generate and deploy the mini model.
 
-1.) Download the following file to your computer.
+1.) Download and save the following file to your computer.
        
        MiniModelBuilder_Create.cs
        
@@ -38,19 +38,19 @@ Since each of the scripts below uses an Environment Variable (set miniModelName=
 ## [SQL Server Analysis Services](https://docs.microsoft.com/analysis-services/ssas-overview?view=asallproducts-allversions "SQL Server Analysis Services")
 
     set miniModelName=<Mini Model Name>
-    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<Server Name>" "<Database Name>" -D "<Server Name>" "<Mini Model Database Name>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>"
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<Master Model.bim file>" -D "<Server Name>" "<Mini Model Database Name>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>"
 
 ## [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/ "Azure Analysis Services")
 
     set miniModelName=<Mini Model Name>
-    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "Provider=MSOLAP;Data Source=asazure://<AAS Region>.asazure.windows.net/<AAS Server Name>;User ID=<xxxxx>;Password=<xxxxx>;Persist Security Info=True;Impersonation Level=Impersonate" "<Database Name>" -D "Provider=MSOLAP;Data Source=asazure://<AAS Region>.asazure.windows.net/<AAS Server Name>;User ID=<xxxxx>;Password=<xxxxx>;Persist Security Info=True;Impersonation Level=Impersonate" "<Mini Model Database Name>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>"
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<Master Model.bim file>" -D "Provider=MSOLAP;Data Source=asazure://<AAS Region>.asazure.windows.net/<AAS Server Name>;User ID=<xxxxx>;Password=<xxxxx>;Persist Security Info=True;Impersonation Level=Impersonate" "<Mini Model Database Name>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>"
 
 ## [Power BI Premium](https://powerbi.microsoft.com/power-bi-premium/ "Power BI Premium")
 
 Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools "XMLA R/W Endpoints") for your Premium Workspace. An additional requirement is setting up a [Service Principal](https://tabulareditor.com/service-principal-access-to-dedicated-capacity-xmla-endpoint/ "Setting up a Service Principal").
 
     set miniModelName=<Mini Model Name>
-    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Premium Dataset>" -D "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Mini Model Premium Dataset>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>" 
+    start /wait /d "C:\Program Files (x86)\Tabular Editor" TabularEditor.exe "<Master Model.bim file>" -D "Provider=MSOLAP;Data Source=powerbi://api.powerbi.com/v1.0/myorg/<Premium Workspace>;User ID=app:<Application ID>@<Tenant ID>;Password=<Application Secret>" "<Mini Model Premium Dataset>" -S "<C# Script File Location (MiniModelBuilder_Create.cs)>" 
 
 ## Instructions for using the program
 
