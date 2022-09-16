@@ -79,7 +79,7 @@ Running this in Power BI Premium requires enabling [XMLA R/W endpoints](https://
 
 ## Requirements
 
-* [Tabular Editor](https://tabulareditor.com/ "Tabular Editor") version 2.12.1 or higher.
+* [Tabular Editor](https://tabulareditor.com/ "Tabular Editor") version 2.12.1 or higher. This tool is not compatible with Tabular Editor 3.
 * Compatible for SQL Server Analysis Services, Azure Analysis Services, and Power BI Premium models.
 * Compatible for tabular models using Import-mode, Direct Query mode, and Composite models.
 * Make sure to click the 'Save' button within each page of the Mini Model Builder after making changes.
