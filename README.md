@@ -19,7 +19,7 @@ Call them what you want - 'micro cubes', 'mini models', 'derivative models' - th
 
 3.) Connect to your model.
 
-4.) Paste the MiniModelBuilder.cs script inside the [Advanced Scripting](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window within Tabular Editor.
+4.) Paste the MiniModelBuilder.cs script inside the [C# script](https://docs.tabulareditor.com/Advanced-Scripting.html "Advanced Scripting") window within Tabular Editor.
 
 5.) Click the 'Play' button (or press F5).
 
